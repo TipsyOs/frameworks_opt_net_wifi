@@ -3087,7 +3087,9 @@ public class WifiConfigStore extends IpConfigStore {
                                         break setVariables;
                                   }
                              } else {
-                                  if (!mWifiNative.setNetworkVariable(
+                                  if (!((newNetwork == false) && (savedValue != null) &&
+                                      (value != null) && value.equals(savedValue)) &&
+                                      !mWifiNative.setNetworkVariable(
                                            netId,
                                            key,
                                            value)) {
@@ -3112,7 +3114,9 @@ public class WifiConfigStore extends IpConfigStore {
                                         break setVariables;
                                   }
                              } else {
-                                  if (!mWifiNative.setNetworkVariable(
+                                  if (!((newNetwork == false) && (savedValue != null) &&
+                                      (value != null) && value.equals(savedValue)) &&
+                                      !mWifiNative.setNetworkVariable(
                                            netId,
                                            key,
                                            value)) {
